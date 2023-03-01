@@ -13,12 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Make Certs
+      run: make certs
 
-    - name: configure
-      run: ./configure
-
-    - name: Install dependencies
-      run: make
+    - name: Make Build
+      run: make build
 
     - name: Run check
       run: make check
