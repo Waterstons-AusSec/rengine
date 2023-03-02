@@ -55,3 +55,4 @@ secret
 /secrets
 
 get-docker.sh
+*.code-workspace
