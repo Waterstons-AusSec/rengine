@@ -33,13 +33,7 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-
-      - name: Build Certs
-        run: ${{ env.COMPOSE_PREFIX_CMD }} docker-compose -f docker-compose.setup.yml run --rm certs
-
-      - name: Test Build
-        run: ${{ env.COMPOSE_PREFIX_CMD }} docker-compose ${{ env.COMPOSE_ALL_FILES }} build ${{ env.SERVICES }}
-
+          
       - name: Build and Push Docker Image to Container Registry
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
